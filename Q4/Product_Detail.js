@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { Card, Text, Button } from 'react-native-paper';
 
 
-export default function Product_Detail() {
+const Product_Detail = () => {
     const [data, setData] = useState([])
     const filePath = 'https://dummyjson.com/products/2';
     useEffect(() => {
@@ -28,7 +28,7 @@ export default function Product_Detail() {
                     <Card.Title
                         title={data.title}
                         titleStyle={{ fontSize: 25 }}
-                    />                    
+                    />
                     <Card.Content>
                         <Text>{data.description}</Text>
                         <Text>Price: ${data.price}</Text>
@@ -54,4 +54,5 @@ export default function Product_Detail() {
         </View>
 
     )
-}
+};
+export default Product_Detail;

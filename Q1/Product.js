@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Text, View, FlatList, Image, TouchableOpacity, ScrollView } from "react-native";
 import styles from "./style";
 
-export default function Product() {
+const Product=() => {
     const [data, setData] = useState([]);
     const filePath = 'https://dummyjson.com/products';
     useEffect(() => {
@@ -60,4 +60,5 @@ export default function Product() {
             />
         </View>
     );
-}
+};
+export default Product;

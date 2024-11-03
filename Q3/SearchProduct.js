@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { TextInput, View, FlatList, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TextInput, View, FlatList, TouchableOpacity, Text, StyleSheet,Button } from 'react-native';
 import { Card } from 'react-native-paper';
 
-export default function searchProduct() {
+import styles  from '../Q1/style';
+
+
+const searchProduct=() => {
     const [data, setData] = useState([]);
     const [value, setValue] = useState('');
     let filePath = 'https://dummyjson.com/products';
@@ -28,6 +31,7 @@ export default function searchProduct() {
     const renderItem = ({ item }) => (
         <Card style={{ marginVertical: 10 }}>
             <Card.Title title={item.title} />
+            <Card.Cover source={{ uri: item.thumbnail }} />
             <Card.Content>
                 <Text>{item.description}</Text>
                 <Text>Price: ${item.price}</Text>
@@ -37,11 +41,11 @@ export default function searchProduct() {
                 <Text>Brand: {item.brand}</Text>
                 <Text>Category: {item.category}</Text>
             </Card.Content>
-            <Card.Cover source={{ uri: item.thumbnail }} />
+           
         </Card>
     );
     return (<View style={{ padding: 20 }}>
-        <Text style={{ padding: 15, fontSize: 30, fontWeight: 'bold' }}>Search Product</Text>
+        <Text style={{ padding: 15, fontSize: 30, fontWeight: 'bold', color: 'red' }}>Search Product</Text>
         <View >
             <TextInput
                 style={styles.searchBar}
@@ -49,9 +53,9 @@ export default function searchProduct() {
                 onChangeText={setValue}
             />
 
-            <TouchableOpacity onPress={searchProduct} style={styles.button}>
+            <Button title='Search' onPress={searchProduct} style={styles.button}>
                 <Text style={styles.buttonText}>Search</Text>
-            </TouchableOpacity>
+            </Button>
         </View>
         <FlatList
             data={data}
@@ -62,4 +66,5 @@ export default function searchProduct() {
 
 
     )
-}
+};
+export default searchProduct;

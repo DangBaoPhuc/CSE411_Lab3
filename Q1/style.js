@@ -47,9 +47,10 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#006ee3',
-        borderRadius: 10,
+        borderRadius: 30,
         flex: 1,
-        width: '100%',
+      height: "100%",
+     
         justifyContent: 'center',
         alignItems: 'center',
         padding: 12,
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
-        fontSize: 10,
+        fontSize: 8,
         fontWeight: 'bold',
         color: '#FFF',
     },
@@ -78,6 +79,14 @@ const styles = StyleSheet.create({
       TextDecor: {
        fontWeight: 'bold'
       },
+      searchBar: {
+        height: 40,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingLeft: 10,
+        backgroundColor: '#f9f9f9',
+       },
 });
 
 export default styles;

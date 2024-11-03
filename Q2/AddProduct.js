@@ -1,11 +1,11 @@
 
 import React from "react";
 import { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View, Alert } from "react-native";
+import { Text, TextInput, TouchableOpacity, View, Alert,Button } from "react-native";
 
 import styles from "../Q1/style";
 
-export default function AddProduct() {
+const AddProduct=()=> {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -61,9 +61,8 @@ export default function AddProduct() {
                 <TextInput placeholder="Enter Category" onChange={setCategory}></TextInput>
                 <Text style={styles.TextDecor}>Image</Text>
                 <TextInput placeholder="Enter image URL(s)"></TextInput>
-                <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-                    <Text style={styles.buttonText}>Add Product</Text>
-                </TouchableOpacity>
+                <Button title="Add Product" onPress={handleSubmit} style={styles.button} >
+                </Button>
 
 
 
@@ -78,4 +77,5 @@ export default function AddProduct() {
 
 
 
-}
+};
+export default AddProduct;
